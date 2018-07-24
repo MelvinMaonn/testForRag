@@ -2,25 +2,28 @@
 
 import os
 import math
-from keras.preprocessing.image import ImageDataGenerator, array_to_img, img_to_array, load_img
-
-
 
 
 def file_name(file_dir):
 
-    f = open('test.txt', 'w')
-
     for root, dirs, files in os.walk(file_dir):
 
-        for file in files:
-            if os.path.splitext(file)[1] == '.jpg':
-                f.write(file + '\n')
+        for onedir in dirs:
 
-        f.close()
+            last_dir = os.path.join(root, onedir)
+            files = os.listdir(last_dir)
+            L = []
+            for file in files:
+                if os.path.splitext(file)[1] == '.jpg':
+                    L.append(os.path.join(last_dir, file))
+
+            num = len(L)
+            print(num)
 
 
 
-if __name__ == "__main__":
 
-    file_name('G:\Rag\RagTest\\xuelang_round1_test_a_20180709')
+
+if __name__=="__main__":
+
+    file_name('G:\Rag\TrainOrign48\RagTrain')
