@@ -10,6 +10,8 @@ def file_name(file_dir):
 
         for onedir in dirs:
 
+            print(onedir)
+            '''
             last_dir = os.path.join(root, onedir)
             files = os.listdir(last_dir)
             L = []
@@ -19,7 +21,7 @@ def file_name(file_dir):
 
             num = len(L)
             print(num)
-
+'''
 
 
 
